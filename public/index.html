@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>My Resume</title>
+    <style>
+        :root{
+    --main-radius: 5px;
+    --main-padding: 5px;
+    --looksblack: #434547;
+    --looksgreen: rgb(70, 136, 70); 
+}
+
+.container{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 0.6fr 1fr;
+    grid-template-rows: 0.2fr 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr 0.2fr;
+    grid-template-areas: 
+    "nav nav"
+    "sidebar main"
+    "sidebar education"
+    "sidebar project"
+    "sidebar experience"
+    "sidebar blogs"
+    "sidebar skills"
+    "sidebar interest"
+    "footer footer"
+    ;
+    grid-gap: 0.5rem;
+}
+
+nav{
+    background-color: var(--looksgreen);
+    grid-area: nav;
+}
+
+nav ul {
+    list-style-type: none;
+    float: center;
+    text-align: center;
+    
+  }
+nav li{
+    padding: 5px;
+  }
+nav li a {
+    color: #0f0e0e;
+    text-align: center;
+    text-decoration: none;
+    font-size: 17px;
+    padding: 5px;
+  }
+nav a:hover{
+    color: white;
+}  
+
+p{
+    color:#a19a9a;
+}
+
+li{
+    color: #a19a9a;
+}
+
+#main{
+    background-color: var(--looksblack);
+    grid-area: main;
+}
+h1 {
+    text-align: center;
+    color:white;
+}
+
+#sidebar{
+    background-color: var(--looksblack);
+    grid-area: sidebar;
+}
+
+#sidebar img{
+    height: 700px;
+    width: 640px;
+}
+
+#sidebar .myname {
+    position: absolute;
+    top: 90%;
+    right: 68%;
+  }
+
+.myname p{
+    color: var(--looksgreen);
+    font-size: large;
+}
+
+#education{
+    background-color: var(--looksblack);
+    grid-area: education;
+    height: 190px;
+    padding: 5px;
+}
+
+.boldheader{
+    color: black;
+}
+
+.edudiv{
+    height:90px;
+    margin: 0 15px 15px 15px;
+    padding: 10px;
+    width:46%;
+    display: inline-block; 
+    vertical-align:top;       
+    
+ }
+ table
+{
+    border: 1px dashed var(--looksgreen);
+    }
+td
+{
+    padding: 2px;
+    border: 1px solid var(--looksgreen);
+    }
+
+h2{
+    text-align: center;
+    color: white;
+}
+
+#project{
+    background-color: var(--looksblack);
+    grid-area: project;
+    height: 150px;
+    padding: 5px;
+}
+
+#experience{
+    background-color: var(--looksblack);
+    grid-area: experience;
+    height: 400px;
+    padding: 5px;
+}
+
+#blogs{
+    background-color: var(--looksblack);
+    grid-area: blogs;
+    height: 245 px;
+    padding: 5px;
+}
+
+#skills{
+    background-color: var(--looksblack);
+    grid-area: skills;
+    height: 100px;
+    padding: 5px;
+}
+
+#interest{
+    background-color: var(--looksblack);
+    grid-area: interest;
+    height: 130px;
+    padding: 5px;
+}
+
+footer{
+    background-color: var(--looksblack);
+    grid-area: footer;
+}
+footer ul {
+    list-style-type: none;
+    float: center;
+    text-align: center;
+  }
+footer li{
+    display: inline-block;
+    padding: 10px;
+    font-size: large;
+  }
+
+ footer li a {
+    color: #0f0e0e;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 5px;
+  }
+footer li{
+    color: var(--looksgreen);
+}
+
+nav {
+    display: grid;
+    grid-template-columns: 7vw 1fr 10fr 1fr 2vw;
+    grid-template-rows: 70px auto;
+    align-items: center;
+}
+
+.main-nav {
+    grid-column: 3;
+}
+
+.hamburger {
+    grid-column: 4;
+    justify-self: end;
+}
+
+.main-nav ul {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    justify-items: center;
+}
+
+@media only screen and (max-width:500px){
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+        "nav"
+        "main"
+        "education"
+        "project"
+        "experience"
+        "blogs"
+        "skills"
+        "interest"
+        ;
+        
+    }
+        .main-nav {
+            grid-row: 2;
+            grid-column: 2 / 5;
+        }
+    
+        .main-nav ul {
+            grid-template-columns: 1fr;
+        }
+
+    #sidebar{
+        display: none;
+    }
+    footer{
+        display: none;
+    }
+}
+</style>
+</head>
+<body>
+     <div class="container">
+        <nav>       
+            <div id="main-nav" class="main-nav">     
+            <ul>
+                <li><a href="#header"><i class="fa fa-home" style="font-size:27px;color:rgb(248, 248, 252); "></i></a></li>
+                <li><a href="#main"><b>About Me</b></a></li>
+                <li><a href="#education"><b>Education</b></a></li>
+                <li><a href="#project"><b>Project</b></a></li>
+                <li><a href="#experience"><b>Experience</b></a></li>
+                <li><a href="#blogs"><b>Blogs</b></a></li>
+                <li><a href="#skills"><b>Skills</b></a></li>
+                <li><a href="#interest"><b>Interest</b></a></li>
+                <li><a href="#contact"><b>Contact</b></a></li>
+            </ul>
+            </div>
+                <div class="hamburger">
+                    <a href="javascript:void(0);" class="icon" onmouseover="myFunction()">
+                        <i class="fa fa-bars" style="font-size:27px;color:rgb(248, 248, 252); "></i>
+                    </a>
+                </div>
+        </nav>
+
+       <div id="main">
+            <h1>About Me</h1>
+                <ul>
+                    <li>Experienced Data Engineer with 4 years of experience in the field of Database. Excellent reputation for resolving problems and improving customer satisfaction. Strengths in SQL scripting, SSRS, T-SQL development skills to write complex queries involving multiple tables, great ability to develop and maintain stored procedures.</li>
+                    <li>
+                        SQL development professional with strong verbal and written communication skills and solid analytical skills for writing SQL queries for solutions to problems. A self-starter who is able to work independently or lead a team to a collaborative solution. 
+                    </li>
+                    <li>
+                        Enthusiastic and eager to contribute to team success through hard work, attention to detail, and excellent organizational skills. Motivated to learn, grow and utilize my technical, database, and management skills for the growth of the organization as well as to enhance my knowledge about new and emerging trends in the IT sector.
+                    </li>
+                </ul>
+       </div>
+
+        <div id="sidebar">
+            <img src="img.jpg" alt="">
+            <div class="myname">
+                <h1>Deepen Rana</h1>
+                <p>Grad Student at University of New Haven</p>
+            </div>
+        </div>
+
+        <div id="education">
+            <h2>Education</h2>
+            <table>
+                <tr id="heading">
+                    <td>Qualification</td>
+                    <td>Board</td>
+                    <td>Percentage / Grades</td>
+                    <td>Year</td>
+                </tr>
+                <tr>
+                    <td>Master of Science, Computer Science</td>
+                    <td>University of New Haven <br>
+                        West Haven, Connecticut <br></td>
+                    <td>Running</td>
+                    <td>2023</td>
+                </tr>
+                <tr>
+                    <td>Bachelor in Computer Engineering and Information Technology</td>
+                    <td>Patan Multiple Campus <br>
+                        lalitpur, Nepal <br></td>                    
+                    <td>64.40%</td>
+                    <td>2019</td>
+                </tr>                
+            </table>
+        </div>
+    
+        <div id="project">
+            <div class="myproject">
+                <h2>Project</h2>
+                <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+        </div>
+    
+        <div id="experience" >
+            <div class="myexpernece">
+                <h2>Experience</h2>
+                    <div class="boldheader">                    
+                    <b>Data Engineer | Impetus Incorporation Pvt. Ltd, Kathmandu, Nepal	</b><br>
+                    </div>
+                    <ul>
+                        <li>Create and customize SSRS reports.</li>
+                        <li>
+                            Create Reports as per user requirements using SSRS 2005/2008/2012 and T-SQL for creating stored procedures. 
+                        </li>
+                        <li>
+                            Create and Optimize SQL queries, stored procedures, add indexes for faster retrieval, and better performance
+                        </li>
+                        <li>
+                            Deploy Avionte Standard and customized reports into the client servers.
+                        </li>
+                        <li>
+                            Debug and troubleshoot stored procedures, and SSRS reports.
+                        </li>
+                    </ul>
+                    <div class="boldheader">                    
+                    <b>Senior Technical Support Officer | Professional Computer System, Kathmandu, Nepal	August 2017 – June 2019</b><br>
+                    </div>
+                    <ul>
+                        <li>Data Migration</li>
+                        <li>
+                            Write SQL queries, Debug Issues, Reconcile Data related to the Physical System of the Nepal Stock Market 
+                        </li>
+                        <li>
+                            Import, Export data from Excel, Microsoft Access, SSMS, Crystal Report
+                        </li>
+                        <li>
+                            Patch software and install new versions to eliminate security problems and protect data.
+                        </li>
+                        <li>
+                            Respond to support requests from end-users and patiently walked individuals through troubleshooting tasks
+                        </li>
+                        <li>
+                            Explain technical information in clear terms to non-technical individuals to promote a better understanding
+                        </li>
+                        <li>
+                            Work with the software development team on reported errors and bugs on newly released software and assisted in the deployment of release fixes
+                        </li>
+                    </ul>
+    
+            </div>       
+            
+    
+        </div>
+    
+        <div id="blogs">
+            <div class="myblogs">
+                <h2>Blogs</h2>
+                <p>    
+                Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book. It usually begins with:
+    
+    “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”
+    The purpose of lorem ipsum is to create a natural looking block of text (sentence, paragraph, page, etc.) that doesn't distract from the layout. A practice not without controversy, laying out pages with meaningless filler text can be very useful when the focus is meant to be on design, not content.
+    
+    The passage experienced a surge in popularity during the 1960s when Letraset used it on their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text with their software. Today it's seen all around the web; on templates, websites, and stock designs. Use our generator to get your own, or read on for the authoritative history of lorem ipsum.
+            </p>
+    
+        </div>
+        </div>
+    
+        <div id="skills" >
+            <div class="myskills">
+                <h2>Skills</h2>
+                    <div class="boldheader">
+                    <b>SSMS, SSRS 2012/2008/2005, SQL Profiler, Microsoft Access, Crystal Report, SQL, T-SQL</b><br>
+                    </div>
+            </div>
+                    
+        </div>
+    
+        <div id="interest" >
+            <div class="myinterest">
+                <h2>Interest</h2>
+                    <ul>
+                        <li>Playing Soccer</li>
+                        <li>
+                            Hiking
+                        </li>
+                        <li>
+                            Playing Guitar
+                        </li>
+                    </ul>
+            </div>
+                    
+        </div>
+    
+        <footer>
+                <ul>
+                    <li> Phone: 475-837-8454</li>
+                    <li>E-email: drana1@unh.newhaven.edu</b></li>
+                    <li><a href="https://www.linkedin.com/in/deep-"><i class="fa fa-linkedin-square"
+                        style="font-size:24px;color:rgb(248, 248, 252); "></i></a></li>
+                    <li><a href="https://www.facebook.com/deepen.rana.5/"><i class="fa fa-facebook-square"
+                        style="font-size:24px;color:rgb(246, 246, 248);"></i></a></li>
+                </ul>
+        </footer>
+
+     </div>
+</body>
+<script>
+    function myFunction() {
+    var x = document.getElementById("main-nav");
+    setTimeout(function() {
+        x.style.display = "none";
+    }, 3000);  
+    if (x.style.display === "grid") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "grid";
+    }
+    }
+
+</script>
+</html>
